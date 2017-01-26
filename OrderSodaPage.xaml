@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"   
+             xmlns:local="clr-namespace:SemesterSoda101;assembly=SemesterSoda101"
+             x:Class="SemesterSoda101.OrderSodaPage">
+    
+    <ContentPage.Title>Soda Machine!</ContentPage.Title>
+    <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*" />
+                <ColumnDefinition Width="60*" />
+                <ColumnDefinition Width="20*" />
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="lblMessage" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Start"/>
+            <Label x:Name="lblCashOnHand" Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="2" HorizontalOptions="Center"/>
+
+            <StackLayout x:Name="rightStack" Grid.Column="0" Grid.Row="1">
+                <Image Source="{local:ImageResource SemesterSoda101.priceTag185.jpg}" Margin="0,15,0,15" HorizontalOptions="Fill" />
+                <Image Source="{local:ImageResource SemesterSoda101.priceTag200.jpg}" Margin="0,15,0,15" HorizontalOptions="Fill" />
+                <Image Source="{local:ImageResource SemesterSoda101.priceTag185.jpg}" Margin="0,15,0,15" HorizontalOptions="Fill" />
+                <Image Source="{local:ImageResource SemesterSoda101.priceTag175.jpg}" Margin="0,15,0,15" HorizontalOptions="Fill" />
+            </StackLayout>
+
+            <Grid Grid.Column="1" x:Name="middleGrid" Margin="0" Grid.Row="1" VerticalOptions="Start">
+                <StackLayout Padding="0">
+                    <Image Source="{local:ImageResource SemesterSoda101.ColaWithBackground.jpg}" Grid.Row="0" Margin="0,-3,0,-3" VerticalOptions="Start" HorizontalOptions="Fill" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer 
+                            Tapped="ColaDouble_Tapped"
+                            NumberOfTapsRequired="2" />
+                            <TapGestureRecognizer
+                            Tapped="SodaSingle_Tapped"
+                            NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="{local:ImageResource SemesterSoda101.MountainSodaWithBackground.jpg}" Grid.Row="1" Margin="0,-3,0,-3" VerticalOptions="Start" HorizontalOptions="Fill" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer 
+                            Tapped="MountainSodaDouble_Tapped"
+                            NumberOfTapsRequired="2" />
+                            <TapGestureRecognizer
+                            Tapped="SodaSingle_Tapped"
+                            NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="{local:ImageResource SemesterSoda101.OrangeSodaWithBackground.jpg}" Grid.Row="2" Margin="0,-3,0,-3" VerticalOptions="Start" HorizontalOptions="Fill" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer 
+                            Tapped="OrangeSodaDouble_Tapped"
+                            NumberOfTapsRequired="2" />
+                            <TapGestureRecognizer
+                            Tapped="SodaSingle_Tapped"
+                            NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="{local:ImageResource SemesterSoda101.WaterWithBackground.jpg}" Grid.Row="3" Margin="0,-3,0,-3" VerticalOptions="Start" HorizontalOptions="Fill">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer 
+                            Tapped="WaterDouble_Tapped"
+                            NumberOfTapsRequired="2" />
+                            <TapGestureRecognizer
+                            Tapped="SodaSingle_Tapped"
+                            NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+            </Grid>
+            <Grid Grid.Column="2" Grid.Row="1" x:Name="rightGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Image Source="{local:ImageResource SemesterSoda101.fiveCircleBold.jpg}" Grid.Row="0" Margin="1,5,1,5" VerticalOptions="EndAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer 
+                            Tapped="AddFiveDouble_Tapped"
+                            NumberOfTapsRequired="2" />
+                        <TapGestureRecognizer
+                            Tapped="AddFiveSingle_Tapped"
+                            NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="{local:ImageResource SemesterSoda101.oneCircleBold.jpg}" Grid.Row="1" VerticalOptions="EndAndExpand" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer 
+                            Tapped="AddOneDouble_Tapped"
+                            NumberOfTapsRequired="2" />
+                        <TapGestureRecognizer
+                            Tapped="AddOneSingle_Tapped"
+                            NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="{local:ImageResource SemesterSoda101.InsertCashLarger.jpg}" Grid.Row="2" VerticalOptions="CenterAndExpand" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer 
+                            Tapped="AddCash_Tapped"
+                            NumberOfTapsRequired="2" />
+                        <TapGestureRecognizer
+                            Tapped="AddCash_Tapped"
+                            NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="{local:ImageResource SemesterSoda101.coinSlot.jpg}" Grid.Row="3" VerticalOptions="EndAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer 
+                            Tapped="CoinSlotDouble_Tapped"
+                            NumberOfTapsRequired="2" />
+                        <TapGestureRecognizer
+                            Tapped="CoinSlotSingle_Tapped"
+                            NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="{local:ImageResource SemesterSoda101.GetSoda.jpg}" Grid.Row="4" VerticalOptions="EndAndExpand" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer 
+                            Tapped="GetSodaDouble_Tapped"
+                            NumberOfTapsRequired="2" />
+                        <TapGestureRecognizer
+                            Tapped="GetSodaSingle_Tapped"
+                            NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="{local:ImageResource SemesterSoda101.CancelButton.jpg}" Grid.Row="5" VerticalOptions="EndAndExpand" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer 
+                            Tapped="CancelButton_Tapped"
+                            NumberOfTapsRequired="2" />
+                        <TapGestureRecognizer
+                            Tapped="CancelButton_Tapped"
+                            NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="{local:ImageResource SemesterSoda101.CoinBucket.jpg}" Grid.Row="6" VerticalOptions="EndAndExpand" IsVisible="False" />
+            </Grid>
+            <Button x:Name="btnManageSoda" Text="Manage Sodas" Clicked="btnManageSoda_Clicked" Grid.Row="2" Grid.ColumnSpan="2" HorizontalOptions="Start" VerticalOptions="End" />
+        </Grid>
+
+    </StackLayout>
+</ContentPage>

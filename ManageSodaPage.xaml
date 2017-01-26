@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SemesterSoda101;assembly=SemesterSoda101"
+             x:Class="SemesterSoda101.ManageSodaPage">
+
+    <ContentPage.Title>Soda Machine!</ContentPage.Title>
+    <StackLayout VerticalOptions="CenterAndExpand">
+        <Label x:Name="lblMessage" Margin="5" />
+        <TableView Margin="5" Intent="Data">
+            <TableView.Root>
+                <TableSection>
+                    <EntryCell x:Name="etyCellPassword" Label="Enter Password: (Soda)" Text="" Keyboard="Default" ></EntryCell>
+                    <EntryCell x:Name="etyCellCola" Label="Number of Colas to order:" Placeholder="(10)" Keyboard="Numeric" ></EntryCell>
+                    <EntryCell x:Name="etyCellMtn" Label="Number of Mountain Sodas to order:" Placeholder="(10)" Keyboard="Numeric" ></EntryCell>
+                    <EntryCell x:Name="etyCellOrange" Label="Number of Orange Sodas to order:" Placeholder="(10)" Keyboard="Numeric" ></EntryCell>
+                    <EntryCell x:Name="etyCellWater" Label="Number of Waters to order:" Placeholder="(10)" Keyboard="Numeric" ></EntryCell>
+                </TableSection>
+            </TableView.Root>
+        </TableView>
+
+        <Button x:Name="btnSubmit" Text="Submit Order" Margin="5" Clicked="BtnSubmitClicked" />
+    </StackLayout>
+
+</ContentPage>
